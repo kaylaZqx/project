@@ -2,23 +2,23 @@
 #include <stdio.h>
 
 ////输入1234，按顺序打印1 2 3 4 
-//void print(unsigned int n)
-//{
-//	if (n > 9)
-//	{
-//		print(n / 10);
-//	}
-//	printf("%d ", n % 10);
-//}
-//
-//int main()
-//{
-//	unsigned int num = 0;
-//	scanf("%d", &num);
-//	print(num);
-//
-//	return 0;
-//}
+void print(unsigned int n)
+{
+	if (n > 9)
+	{
+		print(n / 10);
+	}
+	printf("%d ", n % 10);
+}
+
+int main()
+{
+	unsigned int num = 0;
+	scanf("%d", &num);
+	print(num);
+
+	return 0;
+}
 
 //编写函数不允许创建临时变量，求字符串长度
 //int my_strlen(char* str)
@@ -98,18 +98,18 @@
 //}
 
 //九九乘法表
-int main()
-{
-	int i = 0;
-	int j = 0;
-	//打印9行
-	for (i = 1; i < 10; i++)
-	{
-		//打印1行
-		for (j = 1; j < i + 1; j++)
-		{
-			printf("%d*%d=%-2d ", i, j, i * j);
-		}
-		printf("\n");
-	}
-}
+//int main()
+//{
+//	int i = 0;
+//	int j = 0;
+//	//打印9行
+//	for (i = 1; i < 10; i++)
+//	{
+//		//打印1行
+//		for (j = 1; j < i + 1; j++)
+//		{
+//			printf("%d*%d=%-2d ", i, j, i * j);
+//		}
+//		printf("\n");
+//	}
+//}
