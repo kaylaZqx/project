@@ -76,29 +76,29 @@ int my_strlen(char* str)
 //	return 0;
 //}
 
-void reverse(char arr[], int left, int right)
-{
-	if (left < right)
-	{
-		char tmp = arr[left];
-		arr[left] = arr[right];
-		arr[right] = tmp;
-		reverse(arr, left + 1, right - 1);
-	}
-}
-
-int main()
-{
-	char arr[] = "abcdefg"; //[a b c d e f \0]
-	//int sz = sizeof(arr) / sizeof(arr[0]);  //sizeof在函数外部求字符串长度
-	int left = 0;
-	int right = my_strlen(arr) - 1;
-
-	reverse(arr,left,right);
-
-	printf("%s \n", arr);
-	return 0;
-}
+//void reverse(char arr[], int left, int right)
+//{
+//	if (left < right)
+//	{
+//		char tmp = arr[left];
+//		arr[left] = arr[right];
+//		arr[right] = tmp;
+//		reverse(arr, left + 1, right - 1);
+//	}
+//}
+//
+//int main()
+//{
+//	char arr[] = "abcdefg"; //[a b c d e f \0]
+//	//int sz = sizeof(arr) / sizeof(arr[0]);  //sizeof在函数外部求字符串长度
+//	int left = 0;
+//	int right = my_strlen(arr) - 1;
+//
+//	reverse(arr,left,right);
+//
+//	printf("%s \n", arr);
+//	return 0;
+//}
 
 //int main()
 //{
@@ -293,3 +293,27 @@ int main()
 //	}
 //	return 0;
 //}
+
+
+//int main()
+//{
+//	char ch = 'w';
+//	char* p = &ch;
+//	*p = 'q';
+//	printf("%c\n", ch);
+//	printf("%c\n", *p);
+//	printf("%d\n", sizeof(double *));
+//	return 0;
+//}
+
+
+int main()
+{
+	int arr[5] = { 1,2,3,4,5 };
+	printf("%p\n", arr);
+	printf("%p\n", &arr[0]);
+	printf("%d\n", *arr);
+	printf("%d\n", sizeof(arr));
+	printf("%p\n", &arr);
+	return 0;
+}
