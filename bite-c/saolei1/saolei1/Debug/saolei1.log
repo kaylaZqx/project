@@ -1,0 +1,5 @@
+﻿  game.c
+D:\flushbonding\project\bite-c\saolei1\saolei1\game.c(5,65): warning C4028: 形参 4 与声明不同
+  test.c
+  正在生成代码...
+  saolei1.vcxproj -> D:\flushbonding\project\bite-c\saolei1\Debug\saolei1.exe
