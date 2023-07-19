@@ -39,5 +39,74 @@ void DisplayBoard(char board[ROWS][COLS], int row, int col)
 
 void SetMine(char board[ROWS][COLS], int row, int col)
 {
+	int count = EASY_COUNT;
+	//row:1~9
+	//col:1~9
+	while (count)
+	{
+		int x = rand() % row + 1;
+		int y = rand() % col + 1;
+		if (board[x][y] == '0')
+		{
+			board[x][y] = '1';
+			count--;
+		}
+	}
+}
 
+int get_mine_count(char board[ROWS][COLS], int x, int y)
+{
+	return (board[x - 1][y - 1] +
+		board[x - 1][y] +
+		board[x - 1][y + 1] +
+		board[x][y - 1] +
+		board[x][y + 1] +
+		board[x + 1][y - 1] +
+		board[x + 1][y] +
+		board[x + 1][y + 1] + 8 * '0');
+}
+
+void FindMine(char mine[ROWS][COLS], char show[ROWS][COLS], int row, int col)
+{
+	int x = 0;
+	int y = 0;
+	int win = 0;//排查非雷次数
+	while (win < row * col - EASY_COUNT)
+	{
+		printf("请输入排查坐标:>");
+		scanf("%d %d", &x, &y);
+		if (x >= 1 && x <= row && y >= 1 && y <= col)
+		{
+			if (show[x][y] != '*')
+			{
+				printf("该坐标已被排查，不能重复排查\n");
+			}
+			else
+			{
+				//如果是雷
+				if (mine[x][y] == '1')
+				{
+					printf("很遗憾，被炸！\n");
+					DisplayBoard(mine, ROW, COL);
+					break;
+				}
+				else //不是雷
+				{
+					win++;
+					int count = get_mine_count(mine, x, y);
+					show[x][y] = count + '0';//转换成数字字符
+					DisplayBoard(show, ROW, COL);
+				}
+			}
+		}
+		else
+		{
+			printf("坐标非法，请重新输入\n");
+		}
+	}
+	if (win == row * col - EASY_COUNT)
+	{
+		printf("恭喜你获得胜利\n");
+		DisplayBoard(show, ROW, COL);
+	}
 }

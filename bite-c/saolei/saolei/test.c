@@ -21,10 +21,15 @@ void game()
 	//show数组在没有排查出雷的时候，都是'*'
 	InitBoard(show, ROWS, COLS, '*');
 
-	//DisplayBoard(mine, ROW, COL);
+	
 	//设置雷
 	SetMine(mine, ROW, COL);
 	DisplayBoard(show, ROW, COL);
+	//DisplayBoard(mine, ROW, COL);
+
+	//排查雷
+	FindMine(mine, show, ROW, COL);
+
 }
 
 int main()
