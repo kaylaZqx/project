@@ -1,6 +1,7 @@
 #define _CRT_SECURE_NO_WARNINGS
 
 #include <stdio.h>
+#include<math.h>
 
 
 //小乐乐上课需要走n阶台阶，因为腿长，所以每次可以选择走一阶或两阶，
@@ -175,47 +176,150 @@
 //}
 
 
+//int main()
+//{
+//
+//	int n = 0;
+//	scanf("%d", &n);
+//	char ch[10];
+//	int i = 0;
+//	for (i = 0; i < n; i++)
+//	{
+//		scanf(" %c",&ch[i]);
+//	}
+//	
+//	for (i = 0; i < n; i++)
+//	{
+//					
+//					
+//		if (ch[i] >= 'a' && ch[i] <= 'z')
+//		{
+//			printf("%c\n", ch[i] - 32);
+//		}
+//		else
+//		{
+//			printf("%c\n", ch[i] + 32);
+//		}
+//					
+//	}
+//		/*i = 0;
+//		while (i<n)
+//		{
+//			if (ch[i] >= 'a' && ch[i] <= 'z')
+//			{
+//				printf("%c\n", ch[i] - 32);
+//			}
+//			else
+//			{
+//				printf("%c\n", ch[i] + 32);
+//			}
+//			i++;
+//		}*/
+//}
+
+
+//判断输入的字符是不是字母
+//输入：多组输入，每一行输入一个字符
+//输出：针对每组输入，输出单独占一行，判断输入字符是否为字母
+
+//int main()
+//{
+//	char ch = 0;
+//	while (scanf("%c",&ch)==1)
+//	{
+//		if ((ch >= 'A' && ch <= 'Z') || (ch >= 'a' && ch <= 'z'))
+//		{
+//			printf("%c is an alphbet\n", ch);
+//		}
+//		else
+//		{
+//			printf("%c is not an aiphbet\n", ch);
+//		}
+//		getchar();
+//	}
+//	return 0;
+//}
+
+//int main()
+//{
+//	char ch = 0;
+//	//%c的前面加空格
+//	//跳过下一个字符之前的所有空白字符
+//	while (scanf(" %c", &ch) == 1)
+//	{
+//		if ((ch >= 'A' && ch <= 'Z') || (ch >= 'a' && ch <= 'z'))
+//		{
+//			printf("%c is an alphbet\n", ch);
+//		}
+//		else
+//		{
+//			printf("%c is not an aiphbet\n", ch);
+//		}
+//	}
+//	return 0;
+//}
+
+//int main()
+//{
+//	char ch = 0;
+//	scanf(" %c", &ch);
+//		if ((ch >= 'A' && ch <= 'Z') || (ch >= 'a' && ch <= 'z'))
+//		{
+//			printf("%c is an alphbet\n", ch);
+//		}
+//		else
+//		{
+//			printf("%c is not an aiphbet\n", ch);
+//		}
+//
+//	return 0;
+//}
+
+//参加语文、数学、英语的考试，判断三科中的最高分，从键盘任意输入三个整数表示分数
+//输入：输入一行包括三个整数表示的分数，用空格分隔
+//输出：输出一行，即最高分
+
+//int main()
+//{
+//	int score = 0;
+//	int max = 0;
+//	int i = 0;
+//	for (i = 0; i < 3; i++)
+//	{
+//		scanf("%d", &score);
+//		if (score > max)
+//		{
+//			max = score;
+//		}
+//	}
+//	printf("%d\n", max);
+//	
+//	return 0;
+//}
+
+//变种水仙花数-Lily Number:把任意数字，从中间拆分成两个数字，比如1461可以拆分为（1和461）
+//（14和61），（146和1），如果拆分的乘积之和等于自身，则是一个Lily Nubmber
+//输出，5位数中所有的Lily Number，中间空格分隔
+
 int main()
 {
-
-	int n = 0;
-	scanf("%d", &n);
-		
-	printf("%d\n", n);
-	char ch[10];
 	int i = 0;
-		
-		
-	for (i = 0; i < n; i++)
+	
+	for (i = 10000; i <= 99999; i++)
 	{
-		scanf(" %c",&ch[i]);
-	}
-////		
-//		for (i = 0; i < n; i++)
-//				{
-//					
-//					
-//						if (ch[i] >= 'a' && ch[i] <= 'z')
-//						{
-//							printf("%c\n", ch[i] - 32);
-//						}
-//						else
-//						{
-//							printf("%c\n", ch[i] + 32);
-//						}
-//					
-//				}
-		i = 0;
-		while (i<n)
+		//判断i是否为Lily NUmber
+		int j = 0;
+		int sum = 0;
+		for (j = 1; j <= 4; j++)
 		{
-			if (ch[i] >= 'a' && ch[i] <= 'z')
-			{
-				printf("%c\n", ch[i] - 32);
-			}
-			else
-			{
-				printf("%c\n", ch[i] + 32);
-			}
-			i++;
+			int k = (int)pow(10,j);
+			sum += (i / k) * (i % k);
 		}
+		if (sum == i)
+		{
+			printf("%d \n", i);
+		}
+	}
+
+	return 0;
 }
