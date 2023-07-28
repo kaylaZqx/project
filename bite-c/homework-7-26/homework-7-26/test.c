@@ -176,32 +176,32 @@
 //}
 
 
-//int main()
-//{
-//
-//	int n = 0;
-//	scanf("%d", &n);
-//	char ch[10];
-//	int i = 0;
-//	for (i = 0; i < n; i++)
-//	{
-//		scanf(" %c",&ch[i]);
-//	}
-//	
-//	for (i = 0; i < n; i++)
-//	{
-//					
-//					
-//		if (ch[i] >= 'a' && ch[i] <= 'z')
-//		{
-//			printf("%c\n", ch[i] - 32);
-//		}
-//		else
-//		{
-//			printf("%c\n", ch[i] + 32);
-//		}
-//					
-//	}
+int main()
+{
+
+	int n = 0;
+	scanf("%d", &n);
+	char ch[10];
+	int i = 0;
+	for (i = 0; i < n; i++)
+	{
+		scanf(" %c",&ch[i]);
+	}
+	
+	for (i = 0; i < n; i++)
+	{
+					
+					
+		if (ch[i] >= 'a' && ch[i] <= 'z')
+		{
+			printf("%c\n", ch[i] - 32);
+		}
+		else
+		{
+			printf("%c\n", ch[i] + 32);
+		}
+				
+	}
 //		/*i = 0;
 //		while (i<n)
 //		{
@@ -215,7 +215,7 @@
 //			}
 //			i++;
 //		}*/
-//}
+}
 
 
 //判断输入的字符是不是字母
@@ -301,25 +301,25 @@
 //（14和61），（146和1），如果拆分的乘积之和等于自身，则是一个Lily Nubmber
 //输出，5位数中所有的Lily Number，中间空格分隔
 
-int main()
-{
-	int i = 0;
-	
-	for (i = 10000; i <= 99999; i++)
-	{
-		//判断i是否为Lily NUmber
-		int j = 0;
-		int sum = 0;
-		for (j = 1; j <= 4; j++)
-		{
-			int k = (int)pow(10,j);
-			sum += (i / k) * (i % k);
-		}
-		if (sum == i)
-		{
-			printf("%d \n", i);
-		}
-	}
-
-	return 0;
-}
+//int main()
+//{
+//	int i = 0;
+//	
+//	for (i = 10000; i <= 99999; i++)
+//	{
+//		//判断i是否为Lily NUmber
+//		int j = 0;
+//		int sum = 0;
+//		for (j = 1; j <= 4; j++)
+//		{
+//			int k = (int)pow(10,j);
+//			sum += (i / k) * (i % k);
+//		}
+//		if (sum == i)
+//		{
+//			printf("%d \n", i);
+//		}
+//	}
+//
+//	return 0;
+//}
