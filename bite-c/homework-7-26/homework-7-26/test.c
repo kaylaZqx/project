@@ -175,33 +175,32 @@
 //	return 0;
 //}
 
-
-int main()
-{
-
-	int n = 0;
-	scanf("%d", &n);
-	char ch[10];
-	int i = 0;
-	for (i = 0; i < n; i++)
-	{
-		scanf(" %c",&ch[i]);
-	}
-	
-	for (i = 0; i < n; i++)
-	{
-					
-					
-		if (ch[i] >= 'a' && ch[i] <= 'z')
-		{
-			printf("%c\n", ch[i] - 32);
-		}
-		else
-		{
-			printf("%c\n", ch[i] + 32);
-		}
-				
-	}
+//int main()
+//{
+//
+//	int n = 0;
+//	scanf("%d", &n);
+//	char ch[10];
+//	int i = 0;
+//	for (i = 0; i < n; i++)
+//	{
+//		scanf(" %c",&ch[i]);
+//	}
+//	
+//	for (i = 0; i < n; i++)
+//	{
+//					
+//					
+//		if (ch[i] >= 'a' && ch[i] <= 'z')
+//		{
+//			printf("%c\n", ch[i] - 32);
+//		}
+//		else
+//		{
+//			printf("%c\n", ch[i] + 32);
+//		}
+//				
+//	}
 //		/*i = 0;
 //		while (i<n)
 //		{
@@ -215,7 +214,7 @@ int main()
 //			}
 //			i++;
 //		}*/
-}
+//}
 
 
 //判断输入的字符是不是字母
