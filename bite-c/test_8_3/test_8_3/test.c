@@ -35,32 +35,59 @@
 //	return 0;
 //}
 
-int main()
-{
-	int arr1[] = { 1,2,3,4,5 };
-	int arr2[] = { 2,3,4,5,6 };
-	int arr3[] = { 3,4,5,6,7 };
-	int* parr[3] = { arr1,arr2,arr3 };
+//int main()
+//{
+//	int arr1[] = { 1,2,3,4,5 };
+//	int arr2[] = { 2,3,4,5,6 };
+//	int arr3[] = { 3,4,5,6,7 };
+//	int* parr[3] = { arr1,arr2,arr3 };
+//
+//	int i = 0;
+//	for (i = 0; i < 3; i++)
+//	{
+//		int j = 0;
+//		for (j = 0; j < 5; j++)
+//		{
+//			printf("%d ", *(parr[i] + j));//*(parr[i]+j)==parr[i][j]
+//		}
+//		printf("\n");
+//	}
+//	return 0;
+//}
+//
+//int main()
+//{
+//	int arr[10] = { 0 };
+//	int* p = arr;
+//	int(*p2)[10] = &arr;
+//
+//	char* arr1[5] = { 0 };
+//	char* (*parr)[5] = &arr1;
+//
+//	char ch = 'w';
+//	char* p1 = &ch;
+//	char** p3 = &p1;
+//	return 0;
+//}
+//
+//int main()
+//{
+//	int arr[] = { 1,2,3,4,5,6,7,8,9,10 };
+//	int(*p)[10] = &arr;
+//	int i = 0;
+//	int sz = sizeof(arr) / sizeof(arr[0]);
+//	for (i = 0; i < sz; i++)
+//	{
+//		printf("%d ", *(*p + i));
+//		//p是指向数组的，*p其实就相当于数组名，数组名又是数组首元素的地址
+//		//所以*p本质上是数组首元素的地址
+//	}
+//	return 0;
+//}
 
-	int i = 0;
-	for (i = 0; i < 3; i++)
-	{
-		int j = 0;
-		for (j = 0; j < 5; j++)
-		{
-			printf("%d ", *(parr[i] + j));//*(parr[i]+j)==parr[i][j]
-		}
-		printf("\n");
-	}
-	return 0;
-}
-
-int main()
-{
-	int arr[10] = { 0 };
-	int* p = arr;
-	int(*p2)[10] = &arr;
-
-
-	return 0;
-}
+//int main()
+//{
+//	const char* pstr = "hello";
+//	printf("%s\n", pstr);
+//	return 0;
+//}
