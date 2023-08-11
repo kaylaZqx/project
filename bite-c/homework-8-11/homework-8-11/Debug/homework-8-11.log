@@ -1,0 +1,3 @@
+﻿  test.c
+D:\flushbonding\project\bite-c\homework-8-11\homework-8-11\test.c(95,10): warning C4477: “printf”: 格式字符串“%.2lf”需要类型“double”的参数，但可变参数 1 拥有了类型“int”
+  homework-8-11.vcxproj -> D:\flushbonding\project\bite-c\homework-8-11\Debug\homework-8-11.exe
