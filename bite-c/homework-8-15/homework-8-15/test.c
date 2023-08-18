@@ -68,38 +68,75 @@
 //}
 
 
-//打印杨辉三角
+//3.打印杨辉三角
+//int main()
+//{
+//	int arr[10][10] = { 0 };
+//	int i = 0;
+//	int j = 0;
+//	for (i = 0; i < 10; i++)
+//	{
+//		for (j = 0; j < i; j++)
+//		{
+//			if (j == 0)
+//			{
+//				arr[i][0] = 1;
+//			}
+//			if (i == j)
+//			{
+//
+//				arr[i][j] = 1;
+//			}
+//			if (i >= 2 && j >= 1)
+//			{
+//				arr[i][j] = arr[i - 1][j - 1] + arr[i - 1][j];
+//			}
+//		}
+//	}
+//	for (i = 0; i < 10; i++)
+//	{
+//		for (j = 0; j < i; j++)
+//		{
+//			printf("%3d ", arr[i][j]);
+//		}
+//		printf("\n");
+//	}
+//	return 0;
+//}
+
+
+//4.字符串左旋
+//实现一个函数，可以左旋字符串中的k个字符
+//e.g.:   ABCD左旋两个字符CDAB
+#include <string.h>
+
+void left_rotate(char arr[],int k)
+{
+	int i = 0;
+	int len = strlen(arr);
+	k %= len;
+	for (i = 0; i < k; i++)
+	{
+		//旋转1个字符
+		//1
+		char tmp = arr[0];
+		//2
+		int j = 0;
+		for (j = 0; j < len - 1; j++)
+		{
+			arr[j] = arr[j + 1];
+		}
+		//3
+		arr[len - 1] = tmp;
+	}
+}
+
 int main()
 {
-	int arr[10][10] = { 0 };
-	int i = 0;
-	int j = 0;
-	for (i = 0; i < 10; i++)
-	{
-		for (j = 0; j < i; j++)
-		{
-			if (j == 0)
-			{
-				arr[i][0] = 1;
-			}
-			if (i == j)
-			{
-
-				arr[i][j] = 1;
-			}
-			if (i >= 2 && j >= 1)
-			{
-				arr[i][j] = arr[i - 1][j - 1] + arr[i - 1][j];
-			}
-		}
-	}
-	for (i = 0; i < 10; i++)
-	{
-		for (j = 0; j < i; j++)
-		{
-			printf("%3d ", arr[i][j]);
-		}
-		printf("\n");
-	}
+	char arr[] = "abcdef";
+	int k = 0;
+	scanf("%d", &k);
+	left_rotate(arr, k);
+	printf("%s\n", arr);
 	return 0;
 }
