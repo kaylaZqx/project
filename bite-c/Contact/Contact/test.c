@@ -1,5 +1,5 @@
 #define _CRT_SECURE_NO_WARNINGS
-//实现一个通讯录
+//实现一个通讯录-------静态版本
 //人的信息：
 //名字
 //年龄
@@ -14,6 +14,8 @@
 //6.排序
 //7.显示联系人
 
+#include "contact.h"
+
 void menu()
 {
 	printf("***********************************\n");
@@ -27,12 +29,42 @@ void menu()
 int main()
 {
 	int input = 0;
-
-	scanf("%d", &input);
+	Contact con;//通讯录
+	//初始化
+	InitContact(&con);
 	do
 	{
 		menu();
+		printf("请输入:>");
+		scanf("%d", &input);
+		switch (input)
+		{
+		case 1:
+			AddContact(&con);
+			break;
+		case 2:
+			DelContact(&con);
+			break;
+		case 3:
+			SearchContact(&con);
+			break;
+		case 4:
+			ModifyContact(&con);
+			break;
+		case 5:
+			ShowContact(&con);
+			break;
+		case 6:
+			SortContact(&con);
+			break;
+		case 0:
+			printf("退出\n");
+			break;
+		default:
+			printf("选择错误！\n");
+			break;
+		}
 
-	} while();
+	} while(input);
 	return 0;
 }
