@@ -45,36 +45,62 @@
 //}
 
 
-struct S
-{
-	int data[1000];
-	int num;
-};
+//struct S
+//{
+//	int data[1000];
+//	int num;
+//};
+//
+//void print1(struct S ss)
+//{
+//	int i = 0;
+//	for (i = 0; i < 3; i++)
+//	{
+//		printf("%d ", ss.data[i]);
+//	}
+//	printf("%d \n", ss.num);
+//}
+//
+//void print2(const struct S* ps)
+//{
+//	int i = 0;
+//	for (i = 0; i < 3; i++)
+//	{
+//		printf("%d ", ps->data[i]);
+//	}
+//	printf("%d \n", ps->num);
+//}
+//
+//int main()
+//{
+//	struct S s = { {1,2,3},100 };
+//	print1(s);        //传值调用
+//	print2(&s);       //传址调用
+//	return 0;
+//}
 
-void print1(struct S ss)
-{
-	int i = 0;
-	for (i = 0; i < 3; i++)
-	{
-		printf("%d ", ss.data[i]);
-	}
-	printf("%d \n", ss.num);
-}
 
-void print2(const struct S* ps)
-{
-	int i = 0;
-	for (i = 0; i < 3; i++)
-	{
-		printf("%d ", ps->data[i]);
-	}
-	printf("%d \n", ps->num);
-}
-
+#include <errno.h>
+#include <string.h>
+#include <stdlib.h>
 int main()
 {
-	struct S s = { {1,2,3},100 };
-	print1(s);        //传值调用
-	print2(&s);       //传址调用
+	int arr[10] = { 0 };
+	//动态内存开辟
+	int* p = (int*)malloc(40);
+	if (p == NULL)
+	{
+		printf("%s\n", strerror(errno));
+	}
+	//使用
+	int i = 0;
+	for (i = 0; i < 10; i++)
+	{
+		*(p + i) = i;
+	}
+	for (i = 0; i < 10; i++)
+	{
+		printf("%d ", *(p + i));
+	}
 	return 0;
 }
